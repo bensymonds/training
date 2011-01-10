@@ -10,7 +10,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110109200358) do
+ActiveRecord::Schema.define(:version => 20110110184552) do
+
+  create_table "weighings", :force => true do |t|
+    t.datetime "created_at"
+    t.decimal  "weight",     :precision => 3, :scale => 1
+  end
 
   create_table "weights", :force => true do |t|
     t.datetime "created_at"

@@ -1,4 +1,6 @@
 Training::Application.routes.draw do
+  resources :weighings
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

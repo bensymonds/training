@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  created_at: 2011-01-10 18:45:52
+  weight: 9.99
+
+two:
+  created_at: 2011-01-10 18:45:52
+  weight: 9.99
