@@ -1,0 +1,14 @@
+= form_for(@weighing) do |f|
+  - if @weighing.errors.any?
+    #error_explanation
+      %h2= pluralize(@weighing.errors.count, "error") + "prohibited this weighing from being saved:"
+      %ul
+        = @weighing.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :weight
+    %br/
+    = f.text_field :weight
+  .actions
+    = f.submit

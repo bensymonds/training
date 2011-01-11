@@ -1,5 +1,5 @@
 Training::Application.routes.draw do
-  resources :weighings
+  resources :weighings, :only => [:index, :new, :create]
   root :to => "weighings#index"
 
   # The priority is based upon order of creation:

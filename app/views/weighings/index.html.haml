@@ -1,0 +1,10 @@
+%div{:data => {:role => :header}}
+  %h1 Listing weighings
+  = link_to 'Add', new_weighing_path, "data-icon" => "plus", "class" => "ui-btn-right"
+
+%div{:data => {:role => :content}}
+  %ul{:data => {:role => :listview, :theme => :d}}
+    - @weighings.each do |weighing|
+      %li
+        = weighing.created_at.strftime('%Y-%m-%d')
+        .ui-li-aside= weighing.weight
