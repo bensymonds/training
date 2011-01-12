@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class WeighingsControllerTest < ActionController::TestCase
+
   setup do
     @weighing = weighings(:one)
   end
@@ -22,6 +23,17 @@ class WeighingsControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to weighings_path
+  end
+
+  test "authentication" do
+    @request.env["HTTP_AUTHORIZATION"] = nil # undo test_helper setup
+
+    get :index
+    assert_response :unauthorized
+
+    setup_basic_auth
+    get :index
+    assert_response :success
   end
 
 end
