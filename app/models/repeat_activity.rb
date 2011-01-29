@@ -1,5 +1,5 @@
 class RepeatActivity < ActiveRecord::Base
-  SPORTS = %w( swim cycle run row )
-  validates_inclusion_of :sport, :in => SPORTS
+  validates_inclusion_of :sport, :in => Activity::SPORTS
   validates_presence_of :distance, :name, :description
+  has_many :activities
 end

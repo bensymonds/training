@@ -10,7 +10,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110112200000) do
+ActiveRecord::Schema.define(:version => 20110129181714) do
+
+  create_table "activities", :force => true do |t|
+    t.datetime "created_at"
+    t.date     "date"
+    t.time     "time"
+    t.integer  "repeat_activity_id"
+    t.string   "sport"
+    t.decimal  "distance",           :precision => 5, :scale => 2
+  end
+
+  create_table "repeat_activities", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "sport",                                     :null => false
+    t.decimal  "distance",    :precision => 5, :scale => 2, :null => false
+    t.string   "name",                                      :null => false
+    t.string   "description",                               :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.datetime "created_at"
@@ -27,5 +45,7 @@ ActiveRecord::Schema.define(:version => 20110112200000) do
   create_table "weights", :force => true do |t|
     t.datetime "created_at"
   end
+
+  add_foreign_key "activities", "repeat_activities", :name => "activities_repeat_activity_id_fk"
 
 end
