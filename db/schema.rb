@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110129181714) do
+ActiveRecord::Schema.define(:version => 20110219180323) do
 
   create_table "activities", :force => true do |t|
     t.datetime "created_at"
@@ -25,9 +25,10 @@ ActiveRecord::Schema.define(:version => 20110129181714) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "sport",                                     :null => false
-    t.decimal  "distance",    :precision => 5, :scale => 2, :null => false
+    t.decimal  "distance",    :precision => 5, :scale => 2
     t.string   "name",                                      :null => false
     t.string   "description",                               :null => false
+    t.integer  "duration"
   end
 
   create_table "users", :force => true do |t|
