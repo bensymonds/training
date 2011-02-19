@@ -10,15 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110219180323) do
+ActiveRecord::Schema.define(:version => 20110219181532) do
 
   create_table "activities", :force => true do |t|
     t.datetime "created_at"
     t.date     "date"
-    t.time     "time"
     t.integer  "repeat_activity_id"
     t.string   "sport"
     t.decimal  "distance",           :precision => 5, :scale => 2
+    t.integer  "duration"
   end
 
   create_table "repeat_activities", :force => true do |t|
