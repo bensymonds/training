@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110219181532) do
+ActiveRecord::Schema.define(:version => 20110219182127) do
 
   create_table "activities", :force => true do |t|
     t.datetime "created_at"
@@ -41,10 +41,6 @@ ActiveRecord::Schema.define(:version => 20110219181532) do
   create_table "weighings", :force => true do |t|
     t.datetime "created_at"
     t.decimal  "weight",     :precision => 3, :scale => 1
-  end
-
-  create_table "weights", :force => true do |t|
-    t.datetime "created_at"
   end
 
   add_foreign_key "activities", "repeat_activities", :name => "activities_repeat_activity_id_fk"
