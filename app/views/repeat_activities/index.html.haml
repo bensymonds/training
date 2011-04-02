@@ -1,0 +1,13 @@
+%div{:data => {:role => :header, :nobackbtn => :true}}
+  %h1 Repeat Activities
+  = link_to 'Add', new_repeat_activity_path
+
+%div{:data => {:role => :content}}
+  %ul{:data => {:role => :listview, :theme => :d}}
+    - @repeat_activities.each do |repeat_activity|
+      %li
+        %h3= repeat_activity.name
+        .ui-li-aside= "#{repeat_activity.distance} km"
+        %p= repeat_activity.description
+
+
