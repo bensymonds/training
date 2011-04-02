@@ -1,0 +1,11 @@
+run:
+  sport: run
+  distance: 10.1
+  name: run1
+  description: a run
+
+erg:
+  sport: erg
+  duration: <%= 30.minutes %>
+  name: erg1
+  description: an erg
