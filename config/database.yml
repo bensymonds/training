@@ -1,32 +1,15 @@
-development:
+defaults: &defaults
   adapter: postgresql
   encoding: unicode
-  database: training_development
   pool: 5
   username: training
   password: training
 
-  # Schema search path. The server defaults to $user,public
-  #schema_search_path: myapp,sharedapp,public
-
-  # Minimum log levels, in increasing order:
-  #   debug5, debug4, debug3, debug2, debug1,
-  #   log, notice, warning, error, fatal, and panic
-  # The server defaults to notice.
-  #min_messages: warning
+development:
+  <<: *defaults
+  database: training_development
 
 test:
-  adapter: postgresql
-  encoding: unicode
+  <<: *defaults
   database: training_test
-  pool: 5
-  username: training
-  password: training
-
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: training_production
-  pool: 5
-  username: training
-  password: training
+  min_messages: warning
