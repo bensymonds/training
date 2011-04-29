@@ -7,5 +7,5 @@
     - @repeat_activities.each do |repeat_activity|
       %li
         %h3= link_to repeat_activity.name, repeat_activity_path(repeat_activity)
-        .ui-li-aside= "#{repeat_activity.distance} km"
+        .ui-li-aside= distance_or_duration(repeat_activity)
         %p= repeat_activity.description

@@ -1,0 +1,6 @@
+%div{:data => {:role => :header}}
+  %h1= @repeat_activity.name
+
+%div{:data => {:role => :content}}
+  %p= @repeat_activity.description
+  %p= distance_or_duration @repeat_activity
