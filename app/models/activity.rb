@@ -1,6 +1,6 @@
 class Activity < ActiveRecord::Base
   belongs_to :repeat_activity
-  SPORTS = %w( swim cycle run treadmill erg turbo )
+  SPORTS = %w( swim_parkside swim_jesus_green cycle run treadmill erg turbo )
   validates :sport, :inclusion => {:in => SPORTS}, :unless => :repeat_activity
   validates :distance, :presence => true, :unless => :repeat_activity
   validates :duration, :presence => true, :unless => :repeat_activity
